@@ -1,2 +1,6 @@
 # dotfiles
-personal dotfiles collection
+
+## installation
+```
+stow -v -t ~ tmux
+```
