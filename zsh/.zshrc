@@ -1,7 +1,7 @@
 # Path to your Oh My Zsh installation.
+
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
-
 # CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion.
@@ -59,6 +59,10 @@ plugins=(git fzf)
 
 source $ZSH/oh-my-zsh.sh
 
+# Add hostname to prompt
+PROMPT='%F{cyan}%m%f '$PROMPT
+source $HOME/.venv/bin/activate
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -87,3 +91,42 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Added by Antigravity
+export PATH="/Users/jsheedy/.antigravity/antigravity/bin:$PATH"
+
+# opencode
+export PATH=/Users/jsheedy/.opencode/bin:$PATH
+
+alias fd='fd --no-ignore'
+
+# Antigravity app launcher
+antigravity() {
+  if [ -n "$1" ]; then
+    open -a "Antigravity" "$1"
+  else
+    open -a "Antigravity"
+  fi
+}
+
+instances() {
+    AWS_PAGER="" aws ec2 describe-instances --query "Reservations[*].Instances[*].[InstanceId,PrivateIpAddress,Tags[?Key==\`Name\`].Value|[0]]" --output text --no-paginate
+}
+
+export PATH="/Library/TeX/texbin:$PATH"
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/Users/jsheedy/.juliaup/bin' $path)
+export PATH
+
+# <<< juliaup initialize <<<
+
+export PAGER="less -X"
+export DEVBOX_ID="i-091c25069f1229b1c"
+
+if [ -f $HOME/.aliases ]; then
+	source $HOME/.aliases
+fi
