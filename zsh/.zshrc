@@ -3,8 +3,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
-export PATH=${HOME}/bin:${PATH}
-
 # CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion.
@@ -127,7 +125,10 @@ export DEVBOX_ID="i-091c25069f1229b1c"
 if [ -f $HOME/.aliases ]; then
 	source $HOME/.aliases
 fi
-alias dev="ssh -t joseph@devbox-joseph 'tmux attach || tmux new-session'"
+alias dev="mosh joseph@devbox-joseph -- tmux attach || tmux new-session"
+# alias dev="ssh -t joseph@devbox-joseph 'tmux attach || tmux new-session'"
+export PATH=/opt/homebrew/bin:${PATH}
+export PATH=${HOME}/bin:${PATH}
 export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 export PATH="/Library/TeX/texbin:$PATH"
 export PATH=$HOME/.opencode/bin:$PATH
