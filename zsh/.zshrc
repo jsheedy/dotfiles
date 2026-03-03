@@ -81,21 +81,6 @@ source $HOME/.venv/bin/activate
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
 
-# Set personal aliases, overriding those provided by Oh My Zsh libs,
-# plugins, and themes. Aliases can be placed here, though Oh My Zsh
-# users are encouraged to define aliases within a top-level file in
-# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
-# - $ZSH_CUSTOM/aliases.zsh
-# - $ZSH_CUSTOM/macos.zsh
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-
-alias fd='fd --no-ignore'
-
 # Antigravity app launcher
 antigravity() {
   if [ -n "$1" ]; then
@@ -125,8 +110,7 @@ export DEVBOX_ID="i-091c25069f1229b1c"
 if [ -f $HOME/.aliases ]; then
 	source $HOME/.aliases
 fi
-alias dev="mosh joseph@devbox-joseph -- tmux attach || tmux new-session"
-# alias dev="ssh -t joseph@devbox-joseph 'tmux attach || tmux new-session'"
+
 export PATH=/opt/homebrew/bin:${PATH}
 export PATH=${HOME}/bin:${PATH}
 export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
