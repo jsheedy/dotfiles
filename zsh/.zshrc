@@ -118,3 +118,9 @@ export PATH="/Library/TeX/texbin:$PATH"
 export PATH=$HOME/.opencode/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 source $HOME/.env
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/jsheedy/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jsheedy/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/jsheedy/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jsheedy/google-cloud-sdk/completion.zsh.inc'; fi
