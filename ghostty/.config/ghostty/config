@@ -1,0 +1,8 @@
+font-family = JuliaMono
+# font-family = SF Mono
+font-size = 13
+# theme = One Dark
+scrollback-limit = 50000000
+# split-divider-color = #ff4451
+scrollbar = never
+working-directory = ~/code

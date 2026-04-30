@@ -112,11 +112,12 @@ if [ -f $HOME/.aliases ]; then
 fi
 
 export PATH=/opt/homebrew/bin:${PATH}
-export PATH=${HOME}/bin:${PATH}
-export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 export PATH="/Library/TeX/texbin:$PATH"
+export PATH=$HOME/bin:$PATH
+export PATH=$HOME/.antigravity/antigravity/bin:$PATH
 export PATH=$HOME/.opencode/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$HOME/.julia/bin:$PATH
 source $HOME/.env
 
 # The next line updates PATH for the Google Cloud SDK.
